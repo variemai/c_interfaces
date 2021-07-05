@@ -1,7 +1,7 @@
 EXECS=exec
 CC = gcc -std=gnu99 -ansi -pedantic
 CFLAGS = -g -Wall -fno-inline -O3
-SRCS = arith.c except.c assert.c memchk.c stack.c queue.c list.c atom.c
+SRCS = arith.c except.c assert.c memchk.c stack.c queue.c list.c atom.c table.c
 OBJS = $(SRCS:.c=.o)
 MAIN=exec
 LIBFLAGS= -shared -ldl

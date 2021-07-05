@@ -4,3 +4,5 @@
 tmp/
 *.so
 compile_commands*
+*.o
+.cache/

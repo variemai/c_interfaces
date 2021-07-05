@@ -1,6 +1,12 @@
 #ifndef TABLE_INCLUDED
 #define TABLE_INCLUDED
 
+#include <assert.h>
+#include <stddef.h>
+#include "mem.h"
+#include <stdint.h>
+#include "atom.h"
+
 #define T Table_T
 typedef struct T *T;
 
@@ -11,3 +17,4 @@ extern void *Table_put(T table, const void *key, void *value);
 extern void *Table_get(T table, const void* key);
 extern void *Table_remove(T table, const void* key);
 
+#endif
