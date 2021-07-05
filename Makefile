@@ -28,7 +28,7 @@ LIB: $(OBJS)
 	$(CC) -fPIC $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	$(RM) *.o *~ $(MAIN) *.a
+	$(RM) *.o *~ $(MAIN) *.a *.so
 
 depend: $(SRCS)
 	makedepend $(INCLUDES) $^
