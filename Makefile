@@ -4,13 +4,19 @@ CFLAGS = -g -Wall -fno-inline -O3
 SRCS = arith.c except.c assert.c memchk.c stack.c queue.c list.c atom.c
 OBJS = $(SRCS:.c=.o)
 MAIN=exec
-LIBFLAGS= -shared -Wl -soname
+LIBFLAGS= -shared -ldl
 AR=ar rcs
 
 .PHONY: depend clean
 
-all: LIB
+all: SHLIB
 	@echo  Library has been compiled
+
+static: LIB
+	@echo  Shared Library has been compiled
+
+SHLIB: $(OBJS)
+	$(CC) $(CFLAGS) $(LIBFLAGS) $(OBJS) -o libcintfaces.so
 
 $(MAIN): $(OBJS) main.c
 	$(CC) $(CFLAGS) main.c -o $(MAIN) $(OBJS)
